@@ -1,8 +1,9 @@
 const express = require('express');
 const bent = require('bent');
-
+const cors = require('cors')
 const app = express();
-
+app.use(cors())
+app.options('*', cors())
 app.use(express.json());
 
 app.post('/', async function (request, response) {
